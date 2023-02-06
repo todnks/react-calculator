@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 프로젝트를 시작하게된 계기
 
-react를 사용하여 spa와 간단한 사이드 프로젝트를 만들어왔지만 아직 redux를 사용을 안해보기도 했고 개인적인 궁금함이 생겨서 시작하게되었다. 누구는 회사에서는 안본다고 하지만 모르는것과 안쓰는것은 차이가 있다고 생각하여 redux를 이용하여 간단한 프로젝트를 하려고한다.
+react를 사용하여 spa와 간단한 사이드 프로젝트를 만들어왔지만 아직 redux를 사용을 안해보기도 했고 개인적인 궁금함이 생겨서 시작하게되었다. 모르는것과 안쓰는것은 차이가 있다고 생각하여 redux를 이용하여 간단한 프로젝트를 하려고한다.
 
 ## Available Scripts
 
