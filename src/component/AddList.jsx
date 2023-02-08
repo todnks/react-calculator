@@ -1,5 +1,6 @@
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-
+import { create } from '../feature/list/listSlice';
 const Content = styled.div`
   text-align: center;
   margin: auto;
@@ -8,6 +9,7 @@ const Content = styled.div`
   display: flex;
   max-width: 600px;
   justify-content: space-between;
+  margin-bottom: 20px;
 `;
 
 const InputValue = styled.div`
@@ -39,6 +41,8 @@ const InputButton = styled.div`
 `;
 
 const InputBox = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <Content>
@@ -46,7 +50,14 @@ const InputBox = () => {
           <input type='text' placeholder='할일을 입력해주세요' />
         </InputValue>
         <InputButton>
-          <button type='button'>
+          <button
+            type='button'
+            onClick={() => {
+              dispatch(
+                create({ listContent: document.querySelector('input').value })
+              );
+            }}
+          >
             <span>+</span>
           </button>
         </InputButton>

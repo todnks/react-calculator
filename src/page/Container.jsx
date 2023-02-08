@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import AddList from '../component/AddList';
+import ListUp from '../component/ListUp';
 const ContainerBox = styled.div`
   max-width: 700px;
   height: 100vh;
@@ -35,6 +36,7 @@ const Container = () => {
         <ContentBox>
           <Header>Todo List</Header>
           <AddList />
+          <ListUp />
         </ContentBox>
       </ContainerBox>
     </>
