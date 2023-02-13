@@ -6,10 +6,8 @@ const { isOverMaxDigitsLength } = Validator;
 export default function DigitsContainer({ insertDigits, calculatorState }) {
   const DIGITS = ["9", "8", "7", "6", "5", "4", "3", "2", "1", "0"];
   const handleInsertDigits = (digits) => {
-    console.log(isOverMaxDigitsLength(calculatorState + digits))
     if (isOverMaxDigitsLength(calculatorState + digits)) {
       insertDigits(digits);
-
     }
   }
   return (
