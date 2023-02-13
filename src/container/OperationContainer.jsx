@@ -1,10 +1,13 @@
-import { Operator } from '@/domain';
+import { Operator, Validator } from '@/domain';
 import { Operation } from '@/components';
 const { symbols: SYMBOLS } = Operator;
+const { isOverMaxOperatorLength } = Validator;
 
-export default function OperationContainer() {
+export default function OperationContainer({ insertOperation, calculatorState }) {
   const handleInsertOperation = (operator) => {
-
+    if (isOverMaxOperatorLength(calculatorState + operator)) {
+      insertOperation(operator)
+    }
   }
   return (
     <div className='symbols'>
