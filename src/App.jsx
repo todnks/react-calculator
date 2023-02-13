@@ -6,7 +6,8 @@ function App() {
     insertDigits,
     calculatorState,
     resetstate,
-    insertOperation
+    insertOperation,
+    setAnswer
   } = useCalculator();
   return (
     <div className='App'>
@@ -20,6 +21,7 @@ function App() {
         <OperationContainer
           insertOperation={insertOperation}
           calculatorState={calculatorState}
+          setAnswer={setAnswer}
         />
       </div>
     </div>

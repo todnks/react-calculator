@@ -3,7 +3,7 @@ import { Operation } from '@/components';
 const { symbols: SYMBOLS } = Operator;
 const { isOverMaxOperatorLength } = Validator;
 
-export default function OperationContainer({ insertOperation, calculatorState }) {
+export default function OperationContainer({ insertOperation, calculatorState, setAnswer }) {
   const handleInsertOperation = (operator) => {
     if (isOverMaxOperatorLength(calculatorState + operator)) {
       insertOperation(operator)
@@ -21,6 +21,7 @@ export default function OperationContainer({ insertOperation, calculatorState })
       })}
       <Operation
         symbols="="
+        onClick={setAnswer}
       />
     </div>
   );
