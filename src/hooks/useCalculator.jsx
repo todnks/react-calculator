@@ -18,7 +18,6 @@ export default function useCalculator() {
     if (calculatorState === intialState) {
       return;
     }
-
     setState(calculatorState + operator);
     return
   }, [calculatorState])
@@ -27,10 +26,6 @@ export default function useCalculator() {
     const operator = calculatorState.split('').find((item) => (
       SYMBOLS.includes(item)
     ))
-    if (!operator) {
-
-    }
-
     const [a, b] = calculatorState.split(operator).map((item) => Number(item));
     if (!operator || !a || !b) {
       return;
@@ -40,7 +35,7 @@ export default function useCalculator() {
       [a, b]
     );
     const result = item.execute();
-    setState(result);
+    setState(String(result));
   })
   const resetstate = () => setState(intialState);
   return useMemo(() => ({
