@@ -1,7 +1,7 @@
 import { Operator, Validator } from '@/domain';
-import { Operation } from '@/components';
+import { CalculatorButton } from '@/components';
 const { symbols: SYMBOLS } = Operator;
-const { isOverMaxOperatorLength } = Validator;
+const { isOverMaxOperatorLength } = Validator();
 
 export default function OperationContainer({ insertOperation, calculatorState, setAnswer }) {
   const handleInsertOperation = (operator) => {
@@ -13,14 +13,14 @@ export default function OperationContainer({ insertOperation, calculatorState, s
     <div className='symbols'>
       {SYMBOLS.map((item, key) => {
         return (
-          <Operation
+          <CalculatorButton
             key={key}
-            symbols={item}
+            data={item}
             onClick={handleInsertOperation}
           />)
       })}
-      <Operation
-        symbols="="
+      <CalculatorButton
+        data="="
         onClick={setAnswer}
       />
     </div>
