@@ -13,7 +13,7 @@ function App() {
     <div className='App'>
       <div className='calculator'>
         <CalculatorTitle state={calculatorState} />
-        <ResetContainer state={resetstate} />
+        <ResetContainer onclick={resetstate} />
         <DigitsContainer
           insertDigits={insertDigits}
           calculatorState={calculatorState}
