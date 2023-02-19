@@ -1,6 +1,6 @@
-export default function ResetContainer({ state }) {
+export default function ResetContainer({ onclick }) {
   const resetState = () => {
-    state();
+    onclick();
   }
   return (
     <div className='modifiers'>
