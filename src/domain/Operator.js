@@ -12,7 +12,7 @@ export default class Operator {
   }
 
   static get symbols() {
-    return [...this.SYMBOLS.values()].map((item) => item.operator);
+    return [...this.SYMBOLS.keys()];
   }
 
   static calculate(operator, [a, b]) {
