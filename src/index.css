@@ -1,0 +1,70 @@
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 400px;
+  height: 600px;
+  display: grid;
+  grid-template-areas:
+    'total total total total'
+    'modif modif modif oper'
+    'digit digit digit oper'
+    'digit digit digit oper'
+    'digit digit digit oper'
+    'digit digit digit oper';
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+
+}
+
+button {
+  font-size: 2rem;
+  border: 0.5px solid #98999b;
+}
+
+.modifiers {
+  display: grid;
+  grid-area: modif;
+}
+
+.modifier {
+  background-color: #ccc;
+}
+
+.digits {
+  grid-area: digit;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+}
+
+.digits button {
+  flex: 1 0 30%;
+}
+
+#total {
+  grid-area: total;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.symbols {
+  display: grid;
+  grid-area: oper;
+}
+
+.symbols button {
+  flex: 1 0 30%;
+  background-color: orange;
+}
