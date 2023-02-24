@@ -5,7 +5,7 @@ function App() {
   const {
     insertDigits,
     calculatorState,
-    resetstate,
+    resetState,
     insertOperation,
     setAnswer
   } = useCalculator();
@@ -13,7 +13,7 @@ function App() {
     <div className='App'>
       <div className='calculator'>
         <CalculatorTitle >{calculatorState}</CalculatorTitle>
-        <ResetContainer onClick={resetstate} />
+        <ResetContainer onClick={resetState} />
         <DigitsContainer
           insertDigits={insertDigits}
           calculatorState={calculatorState}
