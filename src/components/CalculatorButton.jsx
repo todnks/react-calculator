@@ -1,11 +1,11 @@
-export default function CalculatorContent({ data, onClick }) {
-  const handleOnclick = () => {
+export default function CalculatorButton({ data, onClick }) {
+  const handleClick = () => {
     onClick(data);
   }
   return (
     <>
       <button
-        onClick={handleOnclick}
+        onClick={handleClick}
       >
         {data}
       </button>
