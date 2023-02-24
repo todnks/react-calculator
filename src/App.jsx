@@ -12,8 +12,8 @@ function App() {
   return (
     <div className='App'>
       <div className='calculator'>
-        <CalculatorTitle state={calculatorState} />
-        <ResetContainer onclick={resetstate} />
+        <CalculatorTitle >{calculatorState}</CalculatorTitle>
+        <ResetContainer onClick={resetstate} />
         <DigitsContainer
           insertDigits={insertDigits}
           calculatorState={calculatorState}
