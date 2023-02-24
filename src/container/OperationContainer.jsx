@@ -1,9 +1,10 @@
 import { Operator, Validator } from '@/domain';
 import { CalculatorButton } from '@/components';
+import { memo } from 'react';
 const { symbols: SYMBOLS } = Operator;
 const { isOverMaxOperatorLength } = Validator();
 
-export default function OperationContainer({ insertOperation, calculatorState, setAnswer }) {
+function OperationContainer({ insertOperation, calculatorState, setAnswer }) {
   const handleInsertOperation = (operator) => {
     if (isOverMaxOperatorLength(calculatorState + operator)) {
       insertOperation(operator)
@@ -11,14 +12,13 @@ export default function OperationContainer({ insertOperation, calculatorState, s
   }
   return (
     <div className='symbols'>
-      {SYMBOLS.map((item, key) => {
-        return (
-          <CalculatorButton
-            key={key}
-            data={item}
-            onClick={handleInsertOperation}
-          />)
-      })}
+      {SYMBOLS.map((item, key) => (
+        <CalculatorButton
+          key={key}
+          data={item}
+          onClick={handleInsertOperation}
+        />
+      ))}
       <CalculatorButton
         data="="
         onClick={setAnswer}
@@ -26,3 +26,4 @@ export default function OperationContainer({ insertOperation, calculatorState, s
     </div>
   );
 }
+export default memo(OperationContainer);
